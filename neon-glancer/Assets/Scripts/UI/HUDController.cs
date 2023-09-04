@@ -42,7 +42,7 @@ public class HUDController : MonoBehaviour
     {
         instance = this;
 
-        Cursor.SetCursor(HUDController.instance.battleCursor, new Vector2(16, 48), CursorMode.Auto);
+        Cursor.SetCursor(battleCursor, new Vector2(16, 48), CursorMode.Auto);
     }
 
     void Start()
