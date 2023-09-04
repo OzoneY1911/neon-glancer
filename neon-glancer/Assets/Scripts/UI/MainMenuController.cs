@@ -64,4 +64,9 @@ public class MainMenuController : MonoBehaviour
             credits.SetActive(false);
         }
     }
+
+    public void OpenURL(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
