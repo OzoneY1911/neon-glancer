@@ -94,6 +94,18 @@ public class WaveController : MonoBehaviour
             enemyAmount = spawnPointsMain.Length;
         }
 
+        Vector3 spawnPoint;
+        for (int i = 0; i < enemyAmount; i++)
+        {
+            if (RandomPointOnNavMesh.RandomPoint(Vector3.zero, 20f, out spawnPoint))
+            {
+                GameObject enemyClone = Instantiate(enemyPrefab, spawnPoint, transform.rotation);
+                enemyList.Add(enemyClone);
+            }
+        }
+
+        // Spawning enemies at defined points
+        /*
         List<Transform> freeSpawnPointsMain = new List<Transform>(spawnPointsMain);
         for (int i = 0; i < enemyAmount; i++)
         {
@@ -121,6 +133,7 @@ public class WaveController : MonoBehaviour
                 enemyList.Add(enemyClone);
             }
         }
+        */
     }
 
     void SkipBreak()

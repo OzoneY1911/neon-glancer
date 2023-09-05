@@ -68,7 +68,7 @@ public class HUDController : MonoBehaviour
         // Update Announcement text
         if (WaveController.instance.waveNumber == 1 && !WaveController.instance.waveActive)
         {
-            UpdateAnnouncementText("Upgrade Shop available! (left side)");
+            UpdateAnnouncementText("Upgrade Shop available!");
         }
         else if (WaveController.instance.waveNumber == 9 && !WaveController.instance.waveActive)
         {

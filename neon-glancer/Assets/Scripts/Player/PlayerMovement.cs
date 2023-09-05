@@ -31,9 +31,12 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput).normalized;
+        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
-        transform.Translate(movementSpeed * Time.deltaTime * movement, Space.World);
+        Vector3 targetDir = PlayerCam.instance.transform.TransformDirection(movement);
+        targetDir.y = 0;
+
+        transform.Translate(movementSpeed * Time.deltaTime * targetDir.normalized, Space.World);
     }
 
     void RotationInput()
