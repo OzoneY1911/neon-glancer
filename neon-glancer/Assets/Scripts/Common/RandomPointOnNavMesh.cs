@@ -11,9 +11,9 @@ public class RandomPointOnNavMesh
         {
             Vector3 randomPoint = center + Random.insideUnitSphere * range;
             NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 2.0f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
             {
-                if (!Physics.CheckSphere(hit.position, 10f, 1 << LayerMask.NameToLayer("Player")))
+                if (!Physics.CheckSphere(hit.position, 11f, 1 << LayerMask.NameToLayer("Player")))
                 {
                     result = hit.position;
                     return true;
