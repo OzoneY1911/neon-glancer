@@ -46,7 +46,7 @@ public class PlayerCam : MonoBehaviour
             transform.RotateAround(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up, degree);
             targetOffset = Quaternion.AngleAxis(degree, Vector3.up) * targetOffset;
 
-            yield return new WaitForSeconds(0.25f * quaterPerSecond);
+            yield return new WaitForSeconds(0.1f * quaterPerSecond);
         }
 
         cameraIsRotating = false;
