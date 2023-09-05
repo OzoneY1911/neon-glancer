@@ -15,8 +15,6 @@ public class WaveController : MonoBehaviour
 
     [Header("Enemy Spawn")]
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] Transform[] spawnPointsMain;
-    [SerializeField] Transform[] spawnPointsCenter;
     public static List<GameObject> enemyList = new List<GameObject>();
 
     int enemyAmount;
@@ -91,49 +89,18 @@ public class WaveController : MonoBehaviour
         }
         else
         {
-            enemyAmount = spawnPointsMain.Length;
+            enemyAmount = 30;
         }
 
         Vector3 spawnPoint;
         for (int i = 0; i < enemyAmount; i++)
         {
-            if (RandomPointOnNavMesh.RandomPoint(Vector3.zero, 20f, out spawnPoint))
+            if (RandomPointOnNavMesh.RandomPoint(Vector3.zero, 35f, out spawnPoint))
             {
                 GameObject enemyClone = Instantiate(enemyPrefab, spawnPoint, transform.rotation);
                 enemyList.Add(enemyClone);
             }
         }
-
-        // Spawning enemies at defined points
-        /*
-        List<Transform> freeSpawnPointsMain = new List<Transform>(spawnPointsMain);
-        for (int i = 0; i < enemyAmount; i++)
-        {
-            int index = Random.Range(0, freeSpawnPointsMain.Count);
-            Transform spawnPos = freeSpawnPointsMain[index]; 
-
-            GameObject enemyClone = Instantiate(enemyPrefab, spawnPos.position, spawnPos.rotation);
-            enemyList.Add(enemyClone);
-            freeSpawnPointsMain.RemoveAt(index);
-        }
-
-        if (waveNumber == 5 || waveNumber == 6)
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                GameObject enemyClone = Instantiate(enemyPrefab, spawnPointsCenter[i].position, spawnPointsCenter[i].rotation);
-                enemyList.Add(enemyClone);
-            }
-        }
-        else if (waveNumber > 6)
-        {
-            for (int i = 0; i < spawnPointsCenter.Length; i++)
-            {
-                GameObject enemyClone = Instantiate(enemyPrefab, spawnPointsCenter[i].position, spawnPointsCenter[i].rotation);
-                enemyList.Add(enemyClone);
-            }
-        }
-        */
     }
 
     void SkipBreak()

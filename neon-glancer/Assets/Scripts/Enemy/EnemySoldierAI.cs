@@ -14,7 +14,7 @@ public class EnemySoldierAI : MonoBehaviour
 
     void Awake()
     {
-        attackRange = 12f;
+        attackRange = 9f;
 
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
