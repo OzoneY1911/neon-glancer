@@ -12,7 +12,7 @@ public class PlayerCam : MonoBehaviour
     [SerializeField] Vector3 targetOffset;
     [SerializeField] float cameraSpeed;
 
-    float quaterPerSecond = 1f / 90f;
+    float cameraRotateSpeed = 5f;
     bool cameraIsRotating;
 
     void Awake()
@@ -20,15 +20,20 @@ public class PlayerCam : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && !cameraIsRotating)
         {
-            StartCoroutine(RotateCam(-1f));
+            StartCoroutine(RotateCam(-cameraRotateSpeed));
         }
         else if (Input.GetKeyDown(KeyCode.E) && !cameraIsRotating)
         {
-            StartCoroutine(RotateCam(1f));
+            StartCoroutine(RotateCam(cameraRotateSpeed));
         }
     }
 
@@ -41,18 +46,12 @@ public class PlayerCam : MonoBehaviour
     {
         cameraIsRotating = true;
 
-        for (int i = 0; i < 90; i++)
+        for (int i = 0; i < 90 / Mathf.Abs(degree); i++)
         {
             transform.RotateAround(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up, degree);
             targetOffset = Quaternion.AngleAxis(degree, Vector3.up) * targetOffset;
 
-            #if UNITY_WEBGL
-                yield return new WaitForSeconds(0.001f * quaterPerSecond);
-            #endif
-
-            #if UNITY_EDITOR
-                yield return new WaitForSeconds(0.25f * quaterPerSecond);
-            #endif
+            yield return null;
         }
 
         cameraIsRotating = false;
