@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ProjectileCollision : MonoBehaviour
 {
+    void Start()
+    {
+        StartCoroutine(DelayedDestroy());
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Walls"))
@@ -21,5 +26,12 @@ public class ProjectileCollision : MonoBehaviour
             HUDController.instance.UpdateHealthBar();
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForSeconds(10f);
+
+        Destroy(gameObject);
     }
 }

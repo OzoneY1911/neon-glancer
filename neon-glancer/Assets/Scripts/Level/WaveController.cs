@@ -37,6 +37,7 @@ public class WaveController : MonoBehaviour
 
     void Update()
     {
+
         if (waveActive && enemyList.Count == 0)
         {
             waveActive = false;
@@ -116,6 +117,7 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(timer);
         SceneManager.LoadScene("MainMenuScene");
         Cursor.SetCursor(null, new Vector2(16, 16), CursorMode.Auto);
+        enemyList.Clear();
 
         gameIsFinishing = false;
     }

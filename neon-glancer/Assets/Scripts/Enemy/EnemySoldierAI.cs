@@ -12,6 +12,9 @@ public class EnemySoldierAI : MonoBehaviour
     public static float attackRange;
     bool playerInAttackRange;
 
+    bool canChase = true;
+    bool canAttack = true;
+
     void Awake()
     {
         attackRange = 9f;
@@ -37,7 +40,11 @@ public class EnemySoldierAI : MonoBehaviour
     void ChasePlayer()
     {
         transform.LookAt(null);
-        agent.SetDestination(player.position);
+
+        if (canChase)
+        {
+            StartCoroutine(DelayDestination(player.position, 3f, canChase));
+        }
     }
 
     void AttackPlayer()
@@ -49,7 +56,10 @@ public class EnemySoldierAI : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                agent.SetDestination(transform.position);
+                if (canAttack)
+                {
+                    StartCoroutine(DelayDestination(transform.position, 3f, canAttack));
+                }
 
                 GetComponent<EnemyShooting>().EnemyShoot();
             }
@@ -58,5 +68,16 @@ public class EnemySoldierAI : MonoBehaviour
                 ChasePlayer();
             }
         }
+    }
+
+    IEnumerator DelayDestination(Vector3 destination, float delay, bool trigger)
+    {
+        trigger = false;
+
+        agent.SetDestination(destination);
+
+        yield return new WaitForSeconds(delay);
+
+        trigger = true;
     }
 }
