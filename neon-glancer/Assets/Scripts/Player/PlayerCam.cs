@@ -12,7 +12,7 @@ public class PlayerCam : MonoBehaviour
     [SerializeField] Vector3 targetOffset;
     [SerializeField] float cameraSpeed;
 
-    float cameraRotateSpeed = 3.5f;
+    int cameraRotateSpeed = 2;
     bool cameraIsRotating;
 
     void Awake()
