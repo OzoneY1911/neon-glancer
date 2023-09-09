@@ -7,6 +7,8 @@ public class UpgradeController : MonoBehaviour
 {
     internal static UpgradeController instance;
 
+    [SerializeField] ShopHUD upgradeShopHUD;
+
     [SerializeField] List<Text> upgradePriceText;
     [SerializeField] List<int> upgradePrice;
     [SerializeField] List<Button> shopButton;
@@ -102,7 +104,7 @@ public class UpgradeController : MonoBehaviour
             {
                 StopCoroutine(notEnoughCoroutine);
             }
-            notEnoughCoroutine = StartCoroutine(UpgradeShopHUD.instance.ShowNotEnoughText());
+            notEnoughCoroutine = StartCoroutine(upgradeShopHUD.ShowNotEnoughText());
 
             return false;
         }

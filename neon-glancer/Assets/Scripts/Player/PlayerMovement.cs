@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float movementSpeed;
 
+    public bool canRotate = true;
+
     void Awake()
     {
         instance = this;
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (!UpgradeShopHUD.instance.isOpened && !PauseMenuController.gamePaused && Physics.Raycast(ray, out hit))
+        if (canRotate && !PauseMenuController.gamePaused && Physics.Raycast(ray, out hit))
         {
             transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
         }

@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UpgradeShopHUD : MonoBehaviour
+public class ShopHUD : MonoBehaviour
 {
-    internal static UpgradeShopHUD instance;
-
     [SerializeField] GameObject shopScreen;
 
     [SerializeField] GameObject notEnoughText;
 
     bool canInteract;
-    public bool isOpened;
 
     void Awake()
     {
-        instance = this;
-
         shopScreen.SetActive(false);
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.F) && canInteract && !shopScreen.activeSelf)
         {
@@ -67,17 +62,17 @@ public class UpgradeShopHUD : MonoBehaviour
         }
     }
 
+    void ToggleShopScreen(bool screenToggle, bool hintToggle)
+    {
+        PlayerMovement.instance.canRotate = !screenToggle;
+        shopScreen.SetActive(screenToggle);
+        HUDController.instance.interactHint.enabled = hintToggle;
+    }
+
     void ToggleInteractHint(bool toggle)
     {
         canInteract = toggle;
         HUDController.instance.interactHint.enabled = toggle;
-    }
-
-    void ToggleShopScreen(bool screenToggle, bool hintToggle)
-    {
-        isOpened = screenToggle;
-        shopScreen.SetActive(screenToggle);
-        HUDController.instance.interactHint.enabled = hintToggle;
     }
 
     public IEnumerator ShowNotEnoughText()

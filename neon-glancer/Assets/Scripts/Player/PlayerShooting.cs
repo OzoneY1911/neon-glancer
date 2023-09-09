@@ -44,14 +44,14 @@ public class PlayerShooting : ShootingSystem
     {
         if (!blaster.isAutomatic)
         {
-            if (!UpgradeShopHUD.instance.isOpened && !PauseMenuController.gamePaused && blaster.canShoot && Input.GetMouseButtonDown(0))
+            if (PlayerMovement.instance.canRotate && !PauseMenuController.gamePaused && blaster.canShoot && Input.GetMouseButtonDown(0))
             {
                 PlayerShoot();
             }
         }
         else
         {
-            if (!UpgradeShopHUD.instance.isOpened && !PauseMenuController.gamePaused && blaster.canShoot && Input.GetMouseButton(0))
+            if (PlayerMovement.instance.canRotate && !PauseMenuController.gamePaused && blaster.canShoot && Input.GetMouseButton(0))
             {
                 PlayerShoot();
             }
