@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d38d2fe2941a734997b0b4609176f40
+guid: 816d4322307e68b4590d1565e78d5177
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -99,5 +99,5 @@ AssetOrigin:
   productId: 225232
   packageName: Keyboard Keys & Mouse Sprites
   packageVersion: 1.0.0
-  assetPath: Assets/Textures/Icons/Keyboard/H.png
+  assetPath: Assets/JohnFarmer/Keyboard Keys & Mouse Sprites/Sprites/KeyboardKeys&Mouse/WhiteVariant/Tab.png
   uploadId: 514783

@@ -29,10 +29,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] Text nextWaveText;
     [SerializeField] Text nextWaveHint;
 
-    [Header("Interact Hint")]
+    [Header("Hints")]
     public Text interactHint;
+    [SerializeField] GameObject ControlsHint;
 
-    [Header("Announcement Text")]
+    [Header("Announcements")]
     [SerializeField] Text AnnouncementText;
 
     [Header("Canvas")]
@@ -114,6 +115,11 @@ public class HUDController : MonoBehaviour
         else if (WaveController.instance.waveActive && nextWaveHint.enabled)
         {
             ToggleNextWaveHint(false);
+        }
+
+        if (WaveController.instance.waveNumber == 3 && WaveController.instance.waveActive && HUDMaterial.color.a < 0.1f)
+        {
+            ControlsHint.SetActive(false);
         }
     }
 

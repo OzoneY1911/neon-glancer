@@ -33,7 +33,7 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && PlayerMovement.instance.canRotate && !WaveController.instance.game_over)
+        if (Input.GetKeyDown(KeyCode.Tab) && PlayerMovement.instance.canRotate && !WaveController.instance.game_over)
         {
             TogglePauseMenu();
         }
