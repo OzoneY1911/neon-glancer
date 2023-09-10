@@ -132,6 +132,7 @@ public class HUDController : MonoBehaviour
         }
         else if (PlayerStats.instance.armor == 0)
         {
+            AudioManager.instance.PlaySFX(AudioManager.SoundEffects.breakArmor);
             armorHUD.SetActive(false);
         }
 

@@ -26,6 +26,7 @@ public class ConsumablesShopController : MonoBehaviour
     {
         if (consumablesShopHUD.CheckPrice(consumablePrice[0]))
         {
+            AudioManager.instance.PlaySFX(AudioManager.SoundEffects.buyMedKit);
             PlayerStats.instance.medKitAmount++;
             HUDController.instance.UpdateMedKitText();
         }
@@ -35,6 +36,7 @@ public class ConsumablesShopController : MonoBehaviour
     {
         if (consumablesShopHUD.CheckPrice(consumablePrice[1]))
         {
+            AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeAuto);
             PlayerStats.instance.armor = PlayerStats.instance.maxArmor;
             HUDController.instance.UpdateArmorBar();
         }

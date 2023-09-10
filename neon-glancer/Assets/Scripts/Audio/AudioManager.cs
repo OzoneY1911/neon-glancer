@@ -29,7 +29,10 @@ public class AudioManager : MonoBehaviour
         upgradeSideBlasters,
         upgradeDamage,
         upgradeRate,
-        upgradeProjectile
+        upgradeProjectile,
+        buyMedKit,
+        useMedKit,
+        breakArmor
     }
 
     [Header("Music")]

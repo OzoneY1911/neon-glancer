@@ -76,6 +76,8 @@ public class PlayerStats : MonoBehaviour
 
     void UseMedKit()
     {
+        AudioManager.instance.PlaySFX(AudioManager.SoundEffects.useMedKit);
+
         if (medKitAmount > 0)
         {
             health += 25;

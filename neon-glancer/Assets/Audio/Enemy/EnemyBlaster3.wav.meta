@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de812cfb519929c4aad9d296f655c81d
+guid: e5de3f87a7a6bb84fbafc16bad6d769b
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -20,3 +20,10 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 214929
+  packageName: Free Laser Weapons
+  packageVersion: 1.0
+  assetPath: Assets/Laser Weapons Sound Pack/Free/light_blast_8.wav
+  uploadId: 484299

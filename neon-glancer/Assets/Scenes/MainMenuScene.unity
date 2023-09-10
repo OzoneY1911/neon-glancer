@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004029707, g: 0.00090216025, b: 0.00090216025, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67,9 +67,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -156,7 +153,7 @@ PrefabInstance:
       value: BlasterProjectile (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a0cbf739b4f6242ee8c9ace73f591ea2, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -1069,7 +1066,7 @@ PrefabInstance:
       value: BlasterProjectile (7)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -1643,7 +1640,7 @@ PrefabInstance:
       value: BlasterProjectile (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a0cbf739b4f6242ee8c9ace73f591ea2, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -1753,7 +1750,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: de812cfb519929c4aad9d296f655c81d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e5de3f87a7a6bb84fbafc16bad6d769b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1959,7 +1956,7 @@ PrefabInstance:
       value: BlasterProjectile (8)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -2402,7 +2399,7 @@ PrefabInstance:
       value: BlasterProjectile (14)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -2483,7 +2480,7 @@ PrefabInstance:
       value: BlasterProjectile (6)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -2733,6 +2730,9 @@ MonoBehaviour:
   - {fileID: 2023569053}
   - {fileID: 1562130007}
   - {fileID: 378050035}
+  - {fileID: 1423266494}
+  - {fileID: 1727486735}
+  - {fileID: 1393607654}
 --- !u!4 &686928204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5856694068949336798, guid: 71801e5a8057e486186426c51754c353, type: 3}
@@ -2879,7 +2879,7 @@ PrefabInstance:
       value: BlasterProjectile (18)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -2999,6 +2999,9 @@ Transform:
   - {fileID: 2023569052}
   - {fileID: 1562130006}
   - {fileID: 378050036}
+  - {fileID: 1423266493}
+  - {fileID: 1727486736}
+  - {fileID: 1393607653}
   m_Father: {fileID: 2133757871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &823472031 stripped
@@ -3019,7 +3022,7 @@ PrefabInstance:
       value: BlasterProjectile (8)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -4045,7 +4048,7 @@ PrefabInstance:
       value: BlasterProjectile (21)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -4612,7 +4615,7 @@ PrefabInstance:
       value: BlasterProjectile (13)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -5014,6 +5017,134 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1393607652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393607653}
+  - component: {fileID: 1393607654}
+  m_Layer: 0
+  m_Name: SFX AS Break Armor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393607653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393607652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814212347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1393607654
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393607652}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb77a6dc838a34315bebb6bc7893cb69, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1394855414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5027,7 +5158,7 @@ PrefabInstance:
       value: BlasterProjectile (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a0cbf739b4f6242ee8c9ace73f591ea2, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -5108,7 +5239,7 @@ PrefabInstance:
       value: BlasterProjectile (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a0cbf739b4f6242ee8c9ace73f591ea2, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -5189,7 +5320,7 @@ PrefabInstance:
       value: BlasterProjectile (15)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -5257,6 +5388,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
   m_PrefabInstance: {fileID: 1402373849}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1423266492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423266493}
+  - component: {fileID: 1423266494}
+  m_Layer: 0
+  m_Name: SFX AS Buy Med Kit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423266493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423266492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814212347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1423266494
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423266492}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1ce7890406010c443a54576a00835e5a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1449055006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,7 +5676,7 @@ PrefabInstance:
       value: BlasterProjectile (20)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -6508,7 +6767,7 @@ PrefabInstance:
       value: BlasterProjectile (10)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
@@ -6576,6 +6835,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
   m_PrefabInstance: {fileID: 1726505906}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1727486734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727486736}
+  - component: {fileID: 1727486735}
+  m_Layer: 0
+  m_Name: SFX AS Use Med Kit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1727486735
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727486734}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d0bee82636075a84a8c3ad2a8d17fc65, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1727486736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727486734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814212347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729479090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6918,7 +7305,7 @@ PrefabInstance:
       value: BlasterProjectile (22)
       objectReference: {fileID: 0}
     - target: {fileID: 4692906759790757252, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29e2e1ca91c6e49f9945fad7935b00c9, type: 2}
     - target: {fileID: 8137069580108355378, guid: 4f4c0842d1f2e4bde995c777d9b903eb, type: 3}
