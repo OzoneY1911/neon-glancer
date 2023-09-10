@@ -35,9 +35,6 @@ public class EnemyStats : MonoBehaviour
 
             PlayerStats.instance.ChangeNeon(200);
             HUDController.instance.UpdateNeonText();
-
-            PlayerStats.instance.health++;
-            HUDController.instance.UpdateHealthBar();
         }
 
         if (health <= maxHealth / 2)

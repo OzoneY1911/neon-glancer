@@ -13,8 +13,6 @@ public class UpgradeController : MonoBehaviour
     [SerializeField] List<int> upgradePrice;
     [SerializeField] List<Button> shopButton;
 
-    Coroutine notEnoughCoroutine;
-
     void Awake()
     {
         instance = this;
@@ -30,7 +28,7 @@ public class UpgradeController : MonoBehaviour
         switch (upgrade.upgradeName)
         {
             case Upgrade.AutomaticMode:
-                if (CheckUpgradePrice(upgradePrice[0]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[0]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeAuto);
                     PlayerShooting.instance.blaster.isAutomatic = true;
@@ -38,7 +36,7 @@ public class UpgradeController : MonoBehaviour
                 }
                 break;
             case Upgrade.AgilityImplant:
-                if (CheckUpgradePrice(upgradePrice[1]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[1]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeMovement);
                     PlayerMovement.instance.movementSpeed *= 1.25f;
@@ -46,7 +44,7 @@ public class UpgradeController : MonoBehaviour
                 }
                 break;
             case Upgrade.TripleBlaster:
-                if (CheckUpgradePrice(upgradePrice[2]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[2]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeSideBlasters);
                     PlayerShooting.instance.leftBlasterObject.SetActive(true);
@@ -55,7 +53,7 @@ public class UpgradeController : MonoBehaviour
                 }
                 break;
             case Upgrade.BlasterDamage:
-                if (CheckUpgradePrice(upgradePrice[3]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[3]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeDamage);
                     PlayerShooting.instance.blaster.damage *= 2;
@@ -65,7 +63,7 @@ public class UpgradeController : MonoBehaviour
                 }
                 break;
             case Upgrade.FireRate:
-                if (CheckUpgradePrice(upgradePrice[4]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[4]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeRate);
                     PlayerShooting.instance.blaster.fireRate *= 2.5f;
@@ -77,7 +75,7 @@ public class UpgradeController : MonoBehaviour
                 };
                 break;
             case Upgrade.ProjectileSpeed:
-                if (CheckUpgradePrice(upgradePrice[5]))
+                if (upgradeShopHUD.CheckPrice(upgradePrice[5]))
                 {
                     AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeProjectile);
                     PlayerShooting.instance.blaster.projectileSpeed *= 2;
@@ -86,27 +84,6 @@ public class UpgradeController : MonoBehaviour
                     shopButton[5].interactable = false;
                 };
                 break;
-        }
-    }
-
-    bool CheckUpgradePrice(int price)
-    {
-        if (PlayerStats.instance.neon >= price)
-        {
-            PlayerStats.instance.ChangeNeon(-price);
-            HUDController.instance.UpdateNeonText();
-
-            return true;
-        }
-        else
-        {
-            if (notEnoughCoroutine != null)
-            {
-                StopCoroutine(notEnoughCoroutine);
-            }
-            notEnoughCoroutine = StartCoroutine(upgradeShopHUD.ShowNotEnoughText());
-
-            return false;
         }
     }
 }

@@ -10,8 +10,16 @@ public class HUDController : MonoBehaviour
     [SerializeField] Material HUDMaterial;
     [SerializeField] FadeMaterial FadeOutNextWaveText;
 
-    [Header("Health Bar")]
+    [Header("Health and Armor")]
     [SerializeField] Image healthBar;
+    [SerializeField] Image armorBar;
+    [SerializeField] GameObject armorHUD;
+
+    [Header("Neon Counter")]
+    [SerializeField] Text neonText;
+
+    [Header("Medical Kit Amount")]
+    [SerializeField] Text medKitText;
 
     [Header("Cursor")]
     public Texture2D battleCursor;
@@ -23,9 +31,6 @@ public class HUDController : MonoBehaviour
 
     [Header("Interact Hint")]
     public Text interactHint;
-
-    [Header("Neon Counter")]
-    [SerializeField] Text neonText;
 
     [Header("Announcement Text")]
     [SerializeField] Text AnnouncementText;
@@ -53,6 +58,7 @@ public class HUDController : MonoBehaviour
         FadeOutNextWaveText = new FadeMaterial();
 
         UpdateNeonText();
+        UpdateMedKitText();
     }
 
     void Update()
@@ -68,7 +74,7 @@ public class HUDController : MonoBehaviour
         // Update Announcement text
         if (WaveController.instance.waveNumber == 1 && !WaveController.instance.waveActive)
         {
-            UpdateAnnouncementText("Upgrade Shop available!");
+            UpdateAnnouncementText("Shops are available!");
         }
         else if (WaveController.instance.waveNumber == 9 && !WaveController.instance.waveActive)
         {
@@ -116,6 +122,47 @@ public class HUDController : MonoBehaviour
         healthBar.fillAmount = (float)PlayerStats.instance.health / 100;
     }
 
+    public void UpdateArmorBar()
+    {
+        armorBar.fillAmount = (float)PlayerStats.instance.armor / 100;
+
+        if (PlayerStats.instance.armor > 0 && !armorHUD.activeSelf)
+        {
+            armorHUD.SetActive(true);
+        }
+        else if (PlayerStats.instance.armor == 0)
+        {
+            armorHUD.SetActive(false);
+        }
+
+        if (PlayerStats.instance.armor == PlayerStats.instance.maxArmor)
+        {
+            ConsumablesShopController.instance.consumableButton[1].interactable = false;
+        }
+        else
+        {
+            ConsumablesShopController.instance.consumableButton[1].interactable = true;
+        }
+    }
+
+    public void UpdateNeonText()
+    {
+        neonText.text = $"{PlayerStats.instance.neon}";
+    }
+    public void UpdateMedKitText()
+    {
+        medKitText.text = $"{PlayerStats.instance.medKitAmount}";
+
+        if (PlayerStats.instance.medKitAmount == PlayerStats.instance.maxMedKitAmount)
+        {
+            ConsumablesShopController.instance.consumableButton[0].interactable = false;
+        }
+        else
+        {
+            ConsumablesShopController.instance.consumableButton[0].interactable = true;
+        }
+    }
+
     void UpdateWaveCounter()
     {
         waveCounter.text = $"Wave {WaveController.instance.waveNumber}";
@@ -140,11 +187,6 @@ public class HUDController : MonoBehaviour
         {
             nextWaveText.text = $"Get ready!   {nextWaveCounter}";
         }
-    }
-
-    public void UpdateNeonText()
-    {
-        neonText.text = $"{PlayerStats.instance.neon}";
     }
 
     void UpdateAnnouncementText(string announcement)

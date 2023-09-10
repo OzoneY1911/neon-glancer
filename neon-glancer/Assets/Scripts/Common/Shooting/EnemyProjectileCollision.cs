@@ -17,7 +17,6 @@ public class EnemyProjectileCollision : MonoBehaviour
         else if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerStats>().TakeDamage(10);
-            HUDController.instance.UpdateHealthBar();
             Destroy(gameObject);
         }
     }

@@ -11,6 +11,8 @@ public class ShopHUD : MonoBehaviour
 
     bool canInteract;
 
+    Coroutine notEnoughCoroutine;
+
     void Awake()
     {
         shopScreen.SetActive(false);
@@ -73,6 +75,27 @@ public class ShopHUD : MonoBehaviour
     {
         canInteract = toggle;
         HUDController.instance.interactHint.enabled = toggle;
+    }
+
+    public bool CheckPrice(int price)
+    {
+        if (PlayerStats.instance.neon >= price)
+        {
+            PlayerStats.instance.ChangeNeon(-price);
+            HUDController.instance.UpdateNeonText();
+
+            return true;
+        }
+        else
+        {
+            if (notEnoughCoroutine != null)
+            {
+                StopCoroutine(notEnoughCoroutine);
+            }
+            notEnoughCoroutine = StartCoroutine(ShowNotEnoughText());
+
+            return false;
+        }
     }
 
     public IEnumerator ShowNotEnoughText()

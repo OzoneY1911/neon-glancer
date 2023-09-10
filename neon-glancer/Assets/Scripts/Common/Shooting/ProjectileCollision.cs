@@ -20,12 +20,6 @@ public class ProjectileCollision : MonoBehaviour
             other.GetComponent<EnemyStats>().TakeDamage(PlayerShooting.instance.blaster.damage);
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerStats>().TakeDamage(10);
-            HUDController.instance.UpdateHealthBar();
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator DelayedDestroy()

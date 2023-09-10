@@ -10,7 +10,13 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Health")]
     public int health;
-    int maxHealth;
+    public int armor;
+    int maxHealth = 100;
+    public int maxArmor = 100;
+
+    [Header("Items")]
+    public int medKitAmount;
+    public int maxMedKitAmount = 5;
 
     [Header("Neon")]
     public int neon;
@@ -22,15 +28,35 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        maxHealth = 100;
         health = maxHealth;
+    }
 
-        neon = 0;
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H) && PlayerMovement.instance.canRotate && medKitAmount > 0 && health < 100 && Time.timeScale == 1)
+        {
+            UseMedKit();
+        }
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        if (armor > 0)
+        {
+            armor -= damage;
+
+            if (armor < 0)
+            {
+                armor = 0;
+            }
+
+            HUDController.instance.UpdateArmorBar();
+        }
+        else
+        {
+            health -= damage;
+            HUDController.instance.UpdateHealthBar();
+        }
 
         if (health <= 0)
         {
@@ -46,5 +72,22 @@ public class PlayerStats : MonoBehaviour
     public void ChangeNeon(int amount)
     {
         neon += amount;
+    }
+
+    void UseMedKit()
+    {
+        if (medKitAmount > 0)
+        {
+            health += 25;
+            if (health > 100)
+            {
+                health = 100;
+            }
+
+            medKitAmount--;
+
+            HUDController.instance.UpdateHealthBar();
+            HUDController.instance.UpdateMedKitText();
+        }
     }
 }
