@@ -59,6 +59,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void LoadMenu()
     {
+        WaveController.enemyList.Clear();
         SceneManager.LoadScene("MainMenuScene");
     }
 }
