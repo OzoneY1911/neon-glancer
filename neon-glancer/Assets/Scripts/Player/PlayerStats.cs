@@ -8,6 +8,9 @@ public class PlayerStats : MonoBehaviour
 {
     internal static PlayerStats instance;
 
+    public Material playerMaterial;
+    public Material armorMaterial;
+
     [Header("Health")]
     public int health;
     public int armor;
@@ -29,6 +32,8 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+
+        GetComponent<MeshRenderer>().material = playerMaterial;
     }
 
     void Update()

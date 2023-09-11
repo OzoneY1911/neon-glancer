@@ -39,7 +39,7 @@ public class PlayerCam : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, player.transform.position + targetOffset, cameraSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, PlayerStats.instance.transform.position + targetOffset, cameraSpeed * Time.deltaTime);
     }
 
     IEnumerator RotateCam(float degree)
@@ -48,7 +48,7 @@ public class PlayerCam : MonoBehaviour
 
         for (int i = 0; i < 90 / Mathf.Abs(degree); i++)
         {
-            transform.RotateAround(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z), Vector3.up, degree);
+            transform.RotateAround(new Vector3(PlayerStats.instance.transform.position.x, transform.position.y, PlayerStats.instance.transform.position.z), Vector3.up, degree);
             targetOffset = Quaternion.AngleAxis(degree, Vector3.up) * targetOffset;
 
             yield return null;

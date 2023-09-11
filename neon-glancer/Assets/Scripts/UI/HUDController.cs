@@ -139,6 +139,7 @@ public class HUDController : MonoBehaviour
         else if (PlayerStats.instance.armor == 0)
         {
             AudioManager.instance.PlaySFX(AudioManager.SoundEffects.breakArmor);
+            PlayerStats.instance.GetComponent<MeshRenderer>().material = PlayerStats.instance.playerMaterial;
             armorHUD.SetActive(false);
         }
 

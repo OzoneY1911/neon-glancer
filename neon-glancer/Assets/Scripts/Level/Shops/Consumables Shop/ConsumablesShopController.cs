@@ -39,6 +39,7 @@ public class ConsumablesShopController : MonoBehaviour
             AudioManager.instance.PlaySFX(AudioManager.SoundEffects.upgradeAuto);
             PlayerStats.instance.armor = PlayerStats.instance.maxArmor;
             HUDController.instance.UpdateArmorBar();
+            PlayerStats.instance.GetComponent<MeshRenderer>().material = PlayerStats.instance.armorMaterial;
         }
     }
 }
