@@ -10,12 +10,14 @@ public class PlayerStats : MonoBehaviour
 
     public Material playerMaterial;
     public Material armorMaterial;
+    public Material medKitMaterial;
 
     [Header("Health")]
     public int health;
     public int armor;
     int maxHealth = 100;
     public int maxArmor = 100;
+    bool healing;
 
     [Header("Items")]
     public int medKitAmount;
@@ -40,7 +42,10 @@ public class PlayerStats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H) && PlayerMovement.instance.canRotate && medKitAmount > 0 && health < 100 && Time.timeScale == 1)
         {
-            UseMedKit();
+            if (medKitAmount > 0 && !healing)
+            {
+                StartCoroutine(UseMedKit());
+            }
         }
     }
 
@@ -79,22 +84,33 @@ public class PlayerStats : MonoBehaviour
         neon += amount;
     }
 
-    void UseMedKit()
+    IEnumerator UseMedKit()
     {
+        healing = true;
+
         AudioManager.instance.PlaySFX(AudioManager.SoundEffects.useMedKit);
 
-        if (medKitAmount > 0)
+        Material initialMaterial = GetComponent<MeshRenderer>().material;
+        GetComponent<MeshRenderer>().material = medKitMaterial;
+
+        medKitAmount--;
+        HUDController.instance.UpdateMedKitText();
+
+        for (int i = 0; i < 25; i++)
         {
-            health += 25;
-            if (health > 100)
-            {
-                health = 100;
-            }
-
-            medKitAmount--;
-
+            health++;
             HUDController.instance.UpdateHealthBar();
-            HUDController.instance.UpdateMedKitText();
+
+            yield return null;
         }
+
+        if (health > 100)
+        {
+            health = 100;
+        }
+
+        GetComponent<MeshRenderer>().material = initialMaterial;
+
+        healing = false;
     }
 }

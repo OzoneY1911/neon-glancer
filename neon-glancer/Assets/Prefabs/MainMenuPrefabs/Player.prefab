@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaterial: {fileID: 2100000, guid: 64cabe2fd930147faa1a03c62d84b363, type: 2}
   armorMaterial: {fileID: 2100000, guid: 2d0766f54ed35fd4986c8dd2db046533, type: 2}
+  medKitMaterial: {fileID: 2100000, guid: 974a1417ae6f94dea9e207fb018df6ea, type: 2}
   health: 0
   armor: 0
   maxArmor: 100
