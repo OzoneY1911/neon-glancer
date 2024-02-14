@@ -12,7 +12,11 @@ WebGL builds of the game are available on:
 
 ## Screenshots
 
-
+<img width="947" alt="Знімок екрана 2024-02-14 о 15 21 26" src="https://github.com/OzoneY1911/neon-glancer/assets/121692316/8601234b-4a69-45b5-adaf-4790009816ab">
+<img width="951" alt="Знімок екрана 2024-02-14 о 15 19 34" src="https://github.com/OzoneY1911/neon-glancer/assets/121692316/f4714637-d13a-4b20-8ea9-fe841453d715">
+<img width="957" alt="Знімок екрана 2024-02-14 о 15 26 23" src="https://github.com/OzoneY1911/neon-glancer/assets/121692316/2b37c040-9675-47f2-b7b2-ea7ca6ef836e">
+<img width="958" alt="Знімок екрана 2024-02-14 о 15 18 42" src="https://github.com/OzoneY1911/neon-glancer/assets/121692316/a9fa1020-56c9-4f0c-af38-8b4b68ab19d0">
+<img width="951" alt="Знімок екрана 2024-02-14 о 15 19 24" src="https://github.com/OzoneY1911/neon-glancer/assets/121692316/23aaae69-92b2-49fe-96be-5a695f593c19">
 
 ## Updates
 
