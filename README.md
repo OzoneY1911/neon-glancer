@@ -10,6 +10,12 @@ WebGL builds of the game are available on:
 [itch.io](https://ozoney.itch.io/neon-glancer),
 [Unity Play](https://play.unity.com/p/webgl-builds-368133)
 
+## Screenshots
+
+
+
+## Updates
+
 Current version: v1.2
 
 Last version updates:
